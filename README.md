@@ -231,3 +231,25 @@ obtener el mensaje.
 
 
 
+### Crear el activity de Scrolling
+Muestra el componente de interfaz de usuario de ScrollView. ScrollView es un
+ViewGroup que en este ejemplo contiene un TextView. Muestra una página de texto
+larga, en este caso, una reseña de un álbum de música, que el usuario puede desplazarse
+verticalmente para leer deslizando el dedo hacia arriba y hacia abajo. Aparece una barra
+de desplazamiento en el margen derecho. La aplicación muestra cómo puede usar texto
+formateado con etiquetas HTML mínimas para configurar el texto en negrita o cursiva, y
+con caracteres de nueva línea para separar párrafos. También puede incluir enlaces web
+activos en el texto.
+
+o Agregue un nuevo Activity dando clic derecho en la carpeta app o en res en el
+proyecto
+
+
+
+<img src="img\39.JPG"/>
+
+<img src="img\40.JPG"/>
+
+<img src="img\38.JPG"/>
+
+Estructura de SCROLLING
