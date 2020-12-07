@@ -52,6 +52,182 @@ A como se puedde apreciar en la imagen ya tenemos la estructura de nuestra aplic
 
 
 
++ Establezca la propiedad visibility a invisible a los TextView del activity_main,
+estos serán activados en el momento en que la segunda activity le mande un
+resultado, en primera instancia están ocultos.
+
+<img src="img\11.JPG"/>
+<img src="img\12.JPG"/>
+
+
++ Establezca el evento onClick al botón del activity_main que tiene el
+identificador btEnviar, puede usar el siguiente código XML. Puede usar la
+corrección automática para generar el código correspondiente a este manejador
+de evento.
+
+<img src="img\13.JPG"/>
+
++ En el caso de que no pueda generar el método a través de las correcciones
+automáticas, tiene la siguiente estructura 
+<img src="img\14.JPG"/>
+
+###  Agregando un Intent al MainActivity.kt
+
++ Abra el fichero MainActivity.kt
+<img src="img\15.JPG"/>
+
++ Agregue un object companion dentro de la clase MainActivity, no dentro de
+algún método, este servirá para simular un objeto estático que no cambia el valor
+de sus propiedades en toda la aplicación. El valor EXTRA_MESSAGE nos
+servirá para la clave del extra en el intent.
+
+<img src="img\16.JPG"/>
+
++ Agregue el siguiente código en el método lanzarSegundaActivity, relacionado a
+la creación de un intent.
+
+<img src="img\18.JPG"/>
+
+
+
++ Muestre el resultado en el momento en que la segunda activity fue lanzada
+
+<img src="img\19.JPG"/>
+<img src="img\20.JPG"/>
+
++ Regrese a la activity principal e indique que instancias del ciclo de vida del
+activity se han ejecutado
+
+
+
+###  Compartiendo datos de Activity principal a la segunda
+
+En la tarea anterior, agregó un intent explícito a MainActivity que lanzó SecondActivity.
+También puede usar un intent para enviar datos de una activity a otra mientras la inicia.
+Los extras de intent son pares clave/valor en un paquete (Bundle). Un paquete (Bundle)
+es una colección de datos almacenados como pares clave/valor. Para pasar información
+de una actividad a otra, coloque claves y valores en el paquete adicional de intención de
+la actividad de envío y luego vuelva a obtenerlos en la actividad de recepción.
+
++ Agregue el siguiente código para enviar datos activities, debe reemplazar el
+código anterior del método lanzarSegundaActivity. Muetre los resultados
+
+<img src="img\21.JPG"/>
+
+
+### Modificando la segunda activity para obtener los extras
+
++ Abra el fichero Segunda.kt para agregar código al método onCreate()
++ Obtenga el intent que activó esta activity
+
+<img src="img\22.JPG"/>
+
++ Obtenga la cadena que contiene el mensaje de los extras de Intent usando el
+valor del objeto creado en la activity principal y obtenerlo usando la clave
+MainActivity.EXTRA_MESSAGE: 
+
+<img src="img\23.JPG"/>
+
+
++ Use findViewById() para obtener la referencia del TextView para el mensaje
+del layout
+
+<img src="img\24.JPG"/>
+
++ Establezca el texto del TextView con la cadena obtenida del extra del intent
+
+<img src="img\25.JPG"/>
+
+
++ Ejecute la aplicación. Cuando escriba el mensaje en el MainActivity, haga clic
+en el botón Enviar, se lanza la SegundaActivity y se muestra el mensaje
++ Muestre resultados a través de capturas de pantalla y comentarios
+<img src="img\26.jpg"/>
+
+<img src="img\27.jpg"/>
+
+A como se puede apreciar en las capturas de pantallas escribimos un mensaje en el plain text y al momento de dar click en el boton enviar ese mensaje es enviado a la segunda plantilla .
+
+### Devolver datos al activity principal
+
+Ahora que tiene una aplicación que lanza una nueva activity y le envía datos, el paso
+final es devolver los datos de la segunda activity a la actividad principal. También usa
+un intent y extras de intención para esta tarea. 
+
++ Abra el fichero activity_segunda.xml y verifique que dispone de la estructura
+indicada al principio de estas tareas con sus identificadores correspondientes.
+
++ Establezca el evento onClick al botón con identificador btRes, si lo hace en el
+XML lo puede realizar de esta manera:
+
+
+<img src="img\28.JPG"/>
+
++ Paso opcional por si no hizo el anterior: Si desea establecer el manejador del
+evento Clic a través de código Kotlin en el método onCreate()
+
+<img src="img\29.JPG"/>
+
++ Solamente queda crear el método devolverRespuesta(), el cual puede agregarlo
+después del cierre de llave del método onCreate()
+
+<img src="img\30.JPG"/>
+
+
+### Crear respuesta del intent en la segunda Activity
+Los datos de respuesta de la segunda actividad a la actividad principal se envían en un
+Intent extra. Construye este intent de retorno y coloca los datos en él de la misma manera
+que lo hace para el intento de envío.
+
++ Abre Segunda.kt por si aún no lo está
+
++ Agrega un companion object para obtener una sola instancia de objeto sin
+necesidad de crear una nueva, esto se debe agregar después de la apertura de la
+llave de la clase Segunda, al inicio para no generar confusiones
+
+<img src="img\31.JPG"/>
+
++ Agregue el código del método devolverRespuesta() creado en la tarea anterior
+
+
+<img src="img\32.JPG"/>
+
+### Obtener la respuesta en el MainActivity y mostrarlo en el TextView
+
+Cuando usa un intent explícito para iniciar otra activity, es posible que no espere
+recuperar ningún dato; solo está activando esa actividad. En ese caso, use startActivity()
+para iniciar la nueva activity como lo hizo anteriormente en esta práctica. Sin embargo,
+si desea recuperar datos de la activity activada, debe iniciarla con
+startActivityForResult().
+
+En esta tarea, modifica la aplicación para iniciar Segunda Activity esperando un
+resultado, para extraer los datos devueltos del Intent y para mostrar esos datos en los
+elementos TextView que creó en la última tarea.
+
++ Abra el fichero de MainActivity.kt
++ Borre o comente la línea de startActivity(intent) a startActivityForResult(intent,
+TEXT_REQUEST), recuerde que TEXT_REQUEST está dentro del companion
+object
+
+<img src="img\33.JPG"/>
+
++ Pasaremos a anular el método onActivityResult(), vamos a Code > Override
+methods o simplemente CTRL + O, busque el método onActivityResult()
+<img src="img\34.png"/>
+
++ Agregue el siguiente código a este método para obtener el extra y establecer en
+el TextView indicado para esto que se identifica con datoRecibido.
+
+<img src="img\34.jpg"/>
+
+ Ahora cuando envíes datos de la segunda Activity hacia la principal, deberías de
+obtener el mensaje.
+
+
+<img src="img\35.jpg"/>
+
+<img src="img\36.jpg"/>
+<img src="img\37.jpg"/>
 
 
 
