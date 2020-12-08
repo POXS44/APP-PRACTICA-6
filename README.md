@@ -319,7 +319,7 @@ debe contener el valor: El resultado es
 + Ejecute la aplicación y explique los resultados obtenidos
 
 
-<img src="img\53.JPG"/>
+<img src="img\53.jpg"/>
 
 
 La aplicación sumadora a realizado la accion se sumar el primer y segundo numero y se realiza la acción atravez del botton sumar y el resultado lo muestra en el texview de la parte inferior de la plantilla a como se muestra en la captura .
