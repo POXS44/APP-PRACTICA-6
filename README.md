@@ -252,4 +252,58 @@ proyecto
 
 <img src="img\38.JPG"/>
 
+<img src="img\41.JPG"/>
+
 Estructura de SCROLLING
+
+<img src="img\42.jpg"/>
+
+<img src="img\43.jpg"/>
+
+<img src="img\44.jpg"/>
+
+
++ El texto es aleatorio, puede usar alguno de Wikipedia o un generador de texto,
+pero debe cumplir con un título del artículo, un subtítulo, Texto con saltos de
+línea
++ Es opcional agregar el botón regresar, pero para pruebas puede agregarlo y
+generar su manejador del evento clic y mandar a llamar al método finish(), para
+que observe que puede manipular el regreso, aunque también lo puede hacer con
+el botón de retroceso
++ Deslícese hacia arriba y hacia abajo para desplazarse por el artículo y observe
+que el subtítulo ahora se desplaza junto con el artículo mientras el título
+permanece en su lugar. Esto se debe a que el título está fuera del ScrollView
+
+
+### Agregue un Activity Aritmética
+
+Con este Activity se pondrá a prueba todo lo aprendido hasta el momento, constará de
+dos EditText, de los cuales tomará sus valores, los convertirá a entero y obtendrá la suma
+de estos dos valores, los cuales serán mostrados mediante un Toast y en un TextView.
+Esta Activity estará conectada a la Segunda Activity, la cual será llamada desde el botón
+Sumar.
+
+La estructura debe seguirse a como se demuestra a continuación:
+
+<img src="img\45.JPG"/>
+
+<img src="img\46.JPG"/>
+
++ Agregue un nuevo Activity, yendo a la carpeta res, dar clic derecho sobre ella e
+ir a New > Activity > Empty Activity.
+
+<img src="img\47.JPG"/>
+
+
++ Utilice la estructura mostrada con anterioridad, agregando los elementos
+necesarios con sus identificadores correspondientes
+<img src="img\49.jpg"/>
+
+
+
+
+
+
+
+
+
