@@ -300,10 +300,26 @@ necesarios con sus identificadores correspondientes
 <img src="img\49.jpg"/>
 
 
++ Obtenga la instancia del Button usando el método findViewById()
 
 
+<img src="img\50.JPG"/>
 
 
++ Cree el método realizarSuma() y establezca el resultado de la suma en la propiedad text
+de etResultadoSuma
+
+<img src="img\51.JPG"/>
+
++ Debe agregar un item de string en strings.xml llamado resultado_aritmetica,
+debe contener el valor: El resultado es
+
+<img src="img\52.JPG"/>
+
++ Ejecute la aplicación y explique los resultados obtenidos
 
 
+<img src="img\53.JPG"/>
 
+
+La aplicación sumadora a realizado la accion se sumar el primer y segundo numero y se realiza la acción atravez del botton sumar y el resultado lo muestra en el texview de la parte inferior de la plantilla a como se muestra en la captura .
